@@ -1,0 +1,424 @@
+
+
+john = 3
+mary = 5
+adam = 6
+print(john, ',', mary, ',' adam)
+total_apples = john + mary + adam
+print(total_apples)
+
+
+
+1 mile = 1.61 kmeters
+kilometers = 12.25
+miles = 7.38
+
+++++++++++++++++++++++++++++++++++
+
+miles_to_kilometers = miles * 1.61
+kilometers_to_miles = kilometers / 1.61
+
+print(miles, "miles is", round(miles_to_kilometers, 2), "kilometers")
+print(kilometers, "kilometers is", round(kilometers_to_miles, 2), "miles")
+
+
+++++++++++++++++++++++++++++++++++
+
+3x3 - 2x2 + 3x - 1
+x = 2
+x = float(x)
+y = 3 * (x ** 3) - (2 * (x ** 2)) + (3 * x) - 1
+print("y =", y)
+
+
+++++++++++++++++++++++++++++++++++
+
+leg_a = float(input("Input first leg length: "))
+leg_b = float(input("Input second leg length: "))
+hypo = (leg_a**2 + leg_b**2) ** .5
+print("Hypotenuse length is", hypo)
+
+
+++++++++++++++++++++++++++++++++++
+
+# input a float value for variable a here
+a = float(input("Enter the 1st float value: "))
+# input a float value for variable b here
+b = float(input("Enter the 2nd float value: "))
+
+# output the result of addition here
+print("Addition of the two float numbers you entered is: " + str(a + b))
+# output the result of subtraction here
+print("Subtraction of the two float numbers you entered is: " + str(a - b))
+# output the result of multiplication here
+print("Multiplication of the two float numbers you entered is: " + str(a * b))
+# output the result of division here
+print("Division of the two float numbers you entered is " + str(a / b))
+
+print("\nThat's all, folks!")
+
+
+++++++++++++++++++++++++++++++++++
+
+ x = float(input("Enter the value of x: "))
+ x = a
+ x += (1 / x)
+ y = x
+ b = a + (1 / y)
+ c = a + (1 / b)
+ d = 1 / c
+ 
+ d = 1 / (a + 1 / (a + 1 / (a + (1 / a)))) 
+ 
+ y = 1 / (x + 1 / (x + 1 / (x + (1 / x)))) 
+ 
+ 
+ ++++++++++++++++++++++++++++++++++++++
+ 
+ Determine the end time of a period of time given the minutes spent
+ 
+hour = int(input("Enter the hour of time: "))
+minute = int(input("Enter the minutes of the time: "))
+spent_minute = int(input("Enter the number of minutes spent: "))
+total_minutes = minute + spent_minute
+# print(total_minutes)
+# print(int(total_minutes % 60))
+hour += int(total_minutes / 60)
+hour = int(hour % 24)
+# print("Hour Will Be: " + str(hour))
+total_minutes = int(total_minutes % 60)
+# print("Minute Will Be:" + str(total_minutes))
+print(" Your Expected time is: " + str(hour) + ":" + str(total_minutes))
+
+++++++++++++++++++++++++++++++++++++++
+
+n = int(input("Enter your input parameter: "))
+print("Is your entered number " + str(n) + " is greater than or equal to 100? " + str((n>=100)))
+
+OR
+
+n = input("Enter your input parameter: ")
+print("Is your entered number " + n + " is greater than or equal to 100? " + str((int(n)>=100)))
+
+
++++++++++++++++++++++++++++++++++++++++
+
+user_input = input("Enter the Word Plant: ")
+if user_input == "Spathiphyllum":
+	print("Yes - Spathiphyllum is the best plant ever!")
+elif user_input == "spathiphyllum":
+	print("No, I want a big Spathiphyllum!")
+else:
+	print("Spathiphyllum! Not " + user_input + "!")
+
+
++++++++++++++++++++++++++++++++++++++++++
+
+income = float(input(" Enter your income: "))
+if income < int(85528):
+    tax = (0.18 * income) - 556.20
+# 	print("Your tax on your Income is: " + str(round(tax)) + "thalers")
+    if tax <= 0:
+	    tax = 0
+else:
+	tax = 14839.20 + (0.32 * (income - 85528))
+# 	print("Your tax on your Income is: " + str(round(tax)) + "thalers")
+print("Your tax on your Income is: " + str(round(tax,0)) + "thalers" )
+
+  OR
+
+income = float(input("Enter the annual income: "))
+if income < 85528:
+	tax = income * 0.18 - 556.02
+else:
+	tax = (income - 85528) * 0.32 + 14839.02
+
+if tax < 0.0:
+	tax = 0.0
+
+tax = round(tax, 0)
+print("The tax is:", tax, "thalers")
+
+
+++++++++++++++++++++++++++++++++++++
+year = int(input("Enter the year: "))
+if year >= 1582:
+    if (year % 4) != 0:
+    	print(" Your enter year is a common year")
+    elif (year % 100) != 0:
+    	print(" Your enter year is a leap year")
+    elif (year % 400) != 0:
+    	print(" Your enter year is a common year")
+    else:
+    	print(" Your enter year is a leap year")
+else:
+	print("Not within the Gregorian calendar period")
+	
+	OR
+
+year = int(input("Enter a year: "))
+
+if year < 1582:
+	print("Not within the Gregorian calendar period")
+else:
+    #  Write the if-elif-elif-else block here.
+    if (year % 4) != 0:
+    	print(" Your enter year is a common year")
+    elif (year % 100) != 0:
+    	print(" Your enter year is a leap year")
+    elif (year % 400) != 0:
+    	print(" Your enter year is a common year")
+    else:
+    	print(" Your enter year is a leap year")
+		
+
++++++++++++++++++++++++++++++++++++++++
+
+secret_number = 777
+
+print(
+"""
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+""")
+
+user_number = int(input("Enter your number: "))
+while user_number != secret_number:
+    print("Ha ha! You're stuck in my loop!")
+    user_number = int(input("Enter the number again: "))
+print(str(secret_number) + " Well done, muggle! You are free now.")
+
+
+++++++++++++++++++++++++++++++++++++++++++++
+
+import time
+
+# Write a for loop that counts to five.
+    # Body of the loop - print the loop iteration number and the word "Mississippi".
+    # Body of the loop - use: time.sleep(1)
+for i in range(1,6):
+    print(str(i) + "Mississippi")
+    time.sleep(2)
+
+# Write a print function with the final message.
+print("Ready or not, here I come!")
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+largest_number = -99999999
+counter = 0
+
+while True:
+    number = int(input("Enter a number or type -1 to end the program: "))
+    if number == -1:
+        break
+    counter += 1
+    if number > largest_number:
+        largest_number = number
+
+if counter != 0:
+    print("The largest number is", largest_number)
+else:
+    print("You haven't entered any number.")
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+secret = 'chupacabra'
+
+while True:
+    user = input('Enter the secret word: ')
+    if user == secret:
+        break
+
+print("You've sucessfully left the loop.")
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+# The Ugly Vowel Eater -: Eat Vowel Letter and leave UnVowel letter
+
+user_word = input("Enter your word: ")
+user_word = user_word.upper()
+
+# user_word = input("Enter your word: ").upper()
+
+for letter in  user_word:
+	if letter == 'A':
+		continue
+	elif letter == 'E':
+		continue
+	elif letter == 'I':
+		continue
+	elif letter == 'O':
+		continue
+	elif letter == 'U':
+		continue
+	else:
+		print(letter)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+# The Pretty Vowel Eater -: Eat Vowel Letter and reassign 
+   # unvowel letter to a variable to print out.
+
+# user_word = input("Enter your word: ")
+# user_word = user_word.upper()
+
+word_without_vowels = ""
+user_word = input("Enter your word: ").upper()
+
+for letter in  user_word:
+	if letter == 'A':
+		continue
+	elif letter == 'E':
+		continue
+	elif letter == 'I':
+		continue
+	elif letter == 'O':
+		continue
+	elif letter == 'U':
+		continue
+	else:
+		word_without_vowels += letter
+		
+print(word_without_vowels)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Building a pyramid
+
+blocks = int(input("Enter the number of Blocks you are using to build the pyramid: "))
+height = blocks_use = 0
+
+while blocks > 0:
+    if blocks > height:
+        height += 1
+        blocks_use = height
+        blocks -= blocks_use
+        # print(height, blocks_use, blocks)
+    else:
+        # print(str(blocks) + " blocks left can't be used for the " + str(height+1) + "th height of the pyramid")
+        break
+
+print("The height of the pyramid is: " + str(height) )
+
+
+
+
+0591515930  ==> Dr. BEN
+
++++++++++++++++++++++++++++++++++++++++
+
+# Collatz's hypothesis
+
+c0 = int(input("Enter a non-negative and non-zero integer number: "))
+step = 0
+if c0 > 0:
+	while c0 != 1:
+		if c0 % 2 == 0:
+			c0 = c0 / 2
+			step += 1
+		else:
+			c0 = 3 * c0 + 1
+			step += 1
+		#print("At step " + str(step) + " the value of c0 is " + str(c0))
+		print(int(c0))
+	print("steps = " + str(step))
+		
+else:
+	print("You entered a negative or zero number ")
+	
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+hat_list = [1,2,3,4,5]
+user_input = int(input("Enter number to replace the middle number: "))
+
+hat_list[2] = user_input
+del hat_list[-1]
+
+print("Length of the current list is: " + str(len(hat_list)))
+print(hat_list)
+
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+beatless = []
+
+beatless.append("John Lemnon")
+beatless.append("Paul McCartney")
+beatless.append("George Harrison")
+print("Step 1:", beatless)
+
+for i in range(2):
+	beatless.append(input("Add the other members of the band: "))
+print("Step 2:", beatless)
+
+del beatless[-1]
+print("Step 3:", beatless)
+
+del beatless[-1]
+print("Step 4:", beatless)
+
+beatless.insert(0,"Ringo Starr")
+print("Step 5:", beatless)
+
+
++++++++++++++++++++++++++++++++++++++++++
+
+drawn = [5, 11, 9, 42, 3, 49]
+bets = [3, 7, 11, 42, 34, 49]
+hits = 0
+miss = 0
+
+for number in bets:
+    if number not in drawn[:]:
+        miss += 1
+    else:
+        hits += 1
+		
+#for number in bets:
+#     if number in drawn[:]:
+#         hits += 1
+#     else:
+#         miss += 1
+
+print(str(hits) + " hits")
+print(str(miss) +" miss")
+
+
++++++++++++++++++++++++++++++++
+
+my_list = [1, 2, 4, 4, 1, 4, 2, 6, 2, 9]
+same_nu = []
+i = 0
+#
+# Write your code here.
+#
+
+for number in my_list:
+    #print(number)
+    for i in range(10):
+		if number == my_list[i]:
+			same_nu.append(number)
+			print(same_nu)
+       
+        
+
+# print("The list with unique elements only:")
+# print(my_list)
+
+
+++++++++++++++++++++++++++++++++++++++++
+
+A list called temps is of multiple list; having a list of 24 values as for each row
+and a colume of list of 31 
+
+temps = [[0.0 for h in range(24)] for d in range(31)]
+
+
+
