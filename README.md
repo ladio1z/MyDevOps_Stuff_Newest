@@ -1,7 +1,7 @@
-## Records of Learn Tools in DevOps
+## Records of Learned Tools or Areas in DevOps
 
-#  SHLLC CLASS - ALFRED
+#  SELF_STUDY COURSES
 
-Information Learn and been taught to be DevOps Engineer
+Information Learn on by self study in line with progressing towards to be DevOps Engineer
 
-
+Thank You LORD JESUS.
