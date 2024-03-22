@@ -1,0 +1,604 @@
+Jenkins_url/env-vars.html  ==> Has the following variables to shell and batch build steps
+
+
+## Cleaning up Ones Workspace
+	stage('Cleanup Workspace'){
+		steps{
+			script{
+				cleanWs()
+			}
+		}
+    }
+	
+	## Post tag comes under the pipeline tag NOT under the stages tag
+	## Having Any way of Cleaning the Workspace
+	## This comes within the pipeline tag but NOT under the stages tag. PLEASE NOTE
+    post {
+            always {
+                cleanWs()
+            }
+        }
+
+## Adding Credential of SonarQube
+	stage('SonarQube Analyst'){
+		steps{
+			script{
+				withSonarQubeEnv(credentialsId: 'cred_name_on_jenkins') {
+					sh 'mvn sonar:sonar'
+				}
+			}
+		}
+	}
+
+
+##  Creating a Webhook on the SonarQube
+
+##  Prevent Handing 
+	stage('Quality Gate'){
+		steps{
+			script{
+				waitForQualityGate abortPipeline: false, credentialsId: 'cred_name_on_jenkins' 
+			}
+		}
+	}
+
+## Install Plugins to use Docker in Jenkins -: Docker, Docker Commons, Docker Pipeline, Docker API, Docker-build-step, CloudBees Docker Build and Publish 
+
+## triggers {
+		pollSCM'*/5 * * * *'
+   }
+ 
+## Introduce an environment
+environment {
+	APP_NAME = "app_name" 
+	RELEASE = "1.0.0"
+	DOCKER_USER = "dockerhub_username"
+	DOCKER_PASS = 'dockerhub'     ## dockerhub is a secret
+	IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+	IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"   # BUILD_NUMBER  is the build numbered for each build on a Pipeline.
+}
+
+## Create API Token of DockerHub Access Token (within DockerHub Platform) and place it in Jenkins Credential Username and Password option named 'dockerhub'. 
+
+
+## The DockerHub can be used as an artifactory for Build Artifact.
+##  Building Docker Image 
+	stage('Build and Push Docker Image'){
+		steps{
+			script{
+				 docker.withRegistry('', DOCKER_PASS) {
+					docker_image = docker.build "${IMAGE_NAME}"   ## Build Docker
+				 }
+				 
+					## A Dockerfile have to be created 
+				 
+				 docker.withRegistry('', DOCKER_PASS) {
+					docker_image.push("${IMA GE_TAG}")   ## Push the docker image created tag with the Image tag created
+					docker_image.push('latest')   ## Push the docker image created with the latest added to the name
+
+				 }
+			}
+		}
+	}
+
+ ## Agro CD is a DevOps Tool and link up with a Kubernetes Cluter
+ ## Agro CD can connect to a Remote Repo
+ ## Agro CD can be used to create an Application
+ 
+ 
+ ## Being able to change/update a file on a Remote Repo on GitHub
+ 	stage('Trigger CD Pipeline'){
+		steps{
+			script{
+					sh " "
+			}
+		}
+	}
+	
+	
+## Updating a tag on a yaml file
+ 	stage('Update the Deployment Tags'){
+		steps{
+				sh """
+					cat deployment.yaml
+					sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+					cat deployment.yaml
+					"""
+		}
+	} 
+ 
+ ## Pushing the Change on yaml file to Git
+  	stage('Push the change deployment file to Git'){
+		steps{
+			sh """
+				git config --global user.name "git_username"
+				git config --global user.email "user_email"
+				git add deployment.yaml
+				git commit -m "Updated Deployment Manifest"
+			   """
+			withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]){
+				sh " git push git_repo_url main
+			}	
+		}
+	}
+ 
+ 
+ ## Post tag comes under the pipeline tag NOT under the stages tag
+ post {
+    success {
+		echo 'Build successful'
+		mail bcc: '', body: 'Pipeline Successful', cc: '', from: 'prince.edusei@vodafone.com', replyTo: '', subject: 'Pipeline Status', to: 'prince.edusei@vodafone.com'
+		/*emailext body: 'Jenkins Pipeline Email Staging', subject: 'Testing jenkins Notifications', to: 'prince.edusei@vodafone.com'*/
+    }
+                                                                                
+   failure {
+		echo 'Build failed!'
+		mail bcc: '', body: 'The Pipeline failed', cc: '', from: 'prince.edusei@vodafone.com', replyTo: '', subject: 'Pipeline Status', to: 'prince.edusei@vodafone.com'
+    }
+    
+    always {
+		echo 'Cleaning up Workspace'
+		cleanWs()
+    }
+                                                                                
+  }
+
+******************************************************
+## Without From email
+mail bcc: '', body: '''Hello All/Team,
+
+This is to inform you that the deploy to the desire path of the artifact has been completed successfully.
+
+Thank You.
+
+Regards,
+App Support Team.''', cc: 'lukeman.adio@vodafone.com', from: '', replyTo: '', subject: 'Deploy of Artifact - Success', to: 'lukeman.adio@vodafone.com'
+
+
+## With From email
+mail bcc: '', body: '''Hello All/Team,
+
+This is to inform you that the deploy to the desire path of the artifact has been completed successfully.
+
+Thank You.
+
+Regards,
+App Support Team.''', cc: 'lukeman.adio@vodafone.com', from: 'lukeman.adio@vodafone.com', replyTo: '', subject: 'Deploy of Artifact - Success', to: 'lukeman.adio@vodafone.com'
+
+
+ 
+******************************************************
+
+Creating certificate for url site : 
++	sudo apt install certbot python3-cerbot-nginx     # Instal Cerbot
++ 	sudo cerbot --nginx -d  domain_name    # Assigning  
+***********************************************************
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  ## It search the textfile for Token and replace with LinuxPassword
+:%s/token/LinuxPassword/g 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Jenkins + SonarQube
+
+After generating token at the SonarQube side, on Jenkins generate credentials
+at global level of kind 'Secret text' then paste the token from SonarQube.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sending Docker Image from a Docker Host to another Docker Host
+
+*1. Get the docker repository and tag name of the Image
+	
+	docker images
+	
+	REPOSITORY         TAG          IMAGE ID       CREATED             SIZE
+	nginx              latest       f652ca386ed1   24 months ago       141MB
+	java-docker        testver0.1   1b3756d6df61   2 years ago         471MB
+	openjdk            latest       1b3756d6df61   2 years ago         471MB
+	influxdb           1.8.6        23a4a7c8e74f   2 years ago         184MB
+	gc/cadvisor        1.0          eb1210707573   5 years ago         69.6MB
+
+
+*2.  Save Docker image as a tar file
+	
+		docker save -o <generate_tar_file_name>  <respository_name:tag_name>
+		
+	docker save -o ngnix_file.tar   nginx:latest
+
+
+*3.  Copy the tar file to the another Docker Host -: 
+	can use cp, scp or rsync command to copy the tar file to the another Host
+	
+		scp  nginx_file.tar  remote_username@172.10.10.2:/remote/directory
+		
+		rsync -avzPe  nginx_file.tar  remote_username@172.10.10.2:/remote/directory
+	
+*4.   Load the image into the Docker receiving the image.
+
+		docker load -i <path_to_image_tar_file>
+		
+	docker load -i  nginx_file.tar
+
+
+*5.	   Check image been loaded to the Docker Host
+
+		docker images
+		
+********************************************
+
+git push -u erp --all    ==> Push all the branches I have locally to Remote Repo
+
+**********************************************
+
+To Keep a Container alive and not to die; either use this two options:
+
+use the sleep infinity ending or using the tail -f /dev/null
+
+	docker run -d --name myalpine alpine tail -f /dev/null
+
+	docker run -d --name my_container alpine sleep infinity
+	
+	docker run -d  -t  --name my_container2 alpine
+	
+	docker run ubuntu while true; do sleep 1; done
+	
+We can use never-ending commands in any of the following ways:
+
+ENTRYPOINT or CMD directive in the Dockerfile
+Overriding ENTRYPOINT or CMD in the docker run command
+	ENTRYPOINT ["tail", "-f", "/dev/null"]
+	
+  1441002685857   ==> Lady's Eco Account
+
+**************************************************************
+
+ON SUPERVISOR in relation to a Docker Container.
+The supervisor is a process control system for UNIX-like operating systems
+It is used to control and keep track of processes, making sure they are 
+running and starting them up again if they crash. The supervisor is 
+typically used to manage long-running processes, such as web servers, 
+background workers, and other applications that need to be kept running at all times
+
+ ## This file will be used to specify which processes should be managed 
+	## by Supervisor and how they should be handled.
+	
+			ADD supervisord.conf /etc/supervisor/conf.d/
+	
+ ##	Here is an example of a supervisord.conf file
+ ## In the configuration file, you can specify how processes should be 
+ ## managed and monitored. The configuration file is written in INI format 
+ ## and has sections for each process that you want to manage.
+ 
+			[program:myapp]
+			command=python /path/to/myapp.py
+			autostart=true
+			autorestart=true
+			redirect_stderr=true
+			stdout_logfile=/var/log/myapp.log
+			
+		
+		## Running a web server (nginx) in a container
+		
+			[program:nginx]
+			command=/usr/sbin/nginx -g 'daemon off;'
+			autostart=true
+			autorestart=true
+			redirect_stderr=true
+			stdout_logfile=/var/log/nginx.log
+
+		## Running a background worker process (celery) in a container
+		
+			[program:celery]
+			command=celery -A myapp.celery:app worker --loglevel=info
+			autostart=true
+			autorestart=true
+			redirect_stderr=true
+			stdout_logfile=/var/log/celery.log
+			
+			## Supervisor is configured to run the command
+			## as a process named "celery."
+			celery -A myapp.celery:app worker - loglevel=info
+			
+		
+		## 
+		
+ ##	check the status of the processes managed by the Supervisor
+ 
+			docker container exec -it <container_id> supervisorctl status
+			docker exec -it <container_id> supervisorctl status
+	
+ ## commands for starting and stopping Supervisor in a Docker container
+		
+		## Starting Supervisor:
+		
+			docker container exec -it <container_id> supervisorctl start all
+			docker exec -it <container_id> supervisorctl start all
+			
+		## Stopping Supervisor:
+		
+			docker container exec -it <container_id> supervisorctl stop all
+			docker exec -it <container_id> supervisorctl stop all
+		
+		## 
+			docker container exec -it <container_id> supervisorctl <start|stop|restart> all
+			docker exec -it <container_id> supervisorctl <start|stop|restart> all
+		
+		
+
+ ## use a supervisorctl commands to start, stop, or restart individual processes
+ 
+			docker container exec -it <container_id> supervisorctl start <process_name>
+			docker container exec -it <container_id> supervisorctl stop <process_name>
+			docker container exec -it <container_id> supervisorctl restart <process_name>
+
+	####  Please note that the process name is defined in the configuration file for Supervisor.
+	
+
+	
+*************************************************
+
+To check out the ports opened on the linux server
+
+*1. Using netstat:	netstat -tuln
+
+*2. Using ss (socket statistics):   ss -tuln
+
+*3. Using lsof (list open files):	lsof -i -P -n | grep LISTEN
+
+*4. Using nmap (network mapper):	nmap localhost
+
+
+************************************************************
+
+This is an example of how to get the gitlab repo cloning to work:
+Step 1
+$ git config --global http.sslCAInfo /path/to/ca.pem
+ 
+Step 2:
+$ git clone http://gitlab.internal.vodafone.com/hr_portal/pd_system.git
+
+
+****************************************************************
+Compress a file using tar
+
+ Use of a dash (“-”) before options is often done, although it is usually unnecessary
+ 
+  tar -cf archive.tar foo bar    # Create archive.tar from files foo and bar.
+  tar -cf archive.tar foo bar    # Create archive.tar from files foo and bar.
+  tar -tvf archive.tar           # List all files in archive.tar verbosely.
+  tar -xf archive.tar           # Extract all files from archive.tar.
+  tar xf archive.tar            # Extract all files from archive.tar.
+  tar zcvf mydir.tar.gz mydir    ## Create the achieve and compress with gzip
+  tar zcvf mydir.tar.bz2 mydir   ## Create the achieve and compress with bz2
+  tar zcvf mydir.tar.xz mydir    ## Create the achieve and compress with xz
+  
+Compress a file using gzip
+ 
+  gzip *                      ## Compress all files in current directory
+  gzip  -r  projectX          ## Compress all files in the projectX directory 
+                              ## and all recursive files/directories under projectX
+  gunzip foo or gzip -d foo   ## De-compress foo found in the file foo.gz.
+
+Compress a file using zip
+
+  zip backup *      ## Compress all files in the current dir and places them in the backup.zip
+  zip -r backup.zip ~    ## Archives your login dir (~) and all files & dir under it in backup.zip 
+  unzip backup.zip        ## Extract all files in backup.zip and placess them in current directory
+
+Compress a file using xz
+
+   xz  foo               ## Compress foo into foo.xz and removes foo after succeeds compressions.
+   xz  -dk bar.xz        ## Decompresses bar.xz into bar and doesn't remove bar.xz upon success decompression.
+   xz  -d  *.xz          ## Decompresses the files compressed using xz.
+   xz  -dcf  a.txt  b.txt.xz  >  abcd.txt    ## Decompresses a mix of compressed and uncompresed files to output to abcd file
+
+*******************************************************************
+
+	sudo /dev/null > ./Dockerfile    ===> Empty the Dockerfile
+	
+********************************************************************
+
+	H/5 * * * *   ==> Every 5 Minutes
+	
+********************************************************************
+ rsync commands for Deploy to a server path....
+
+    sh 'rsync -avzPe "ssh -o StrictHostKeyChecking=no -o PubkeyAcceptedKeyTypes=rsa-sha2-256" --no-p --no-g --chmod=ugo=rwX $(pwd)/ devuser@10.233.201.228:/opt/HR/NDA/nda_app'
+
+	sh 'rsync -auvzP -e "ssh -oHostKeyAlgorithms=+ssh-dss -oPubKeyAcceptedKeyTypes=+ssh-rsa" --progress --no-perms --no-owner --no-group $(pwd)/ devuser@10.233.201.228:/usr/share/nginx/html/contract_app'
+
+********************************************************************
+  ON DOCKER / DOCKER-COMPOSE
+ 
+	docker compose config     ## Check the validity of the docker-compose file
+	docker compose up -d      ## Create and Start up the services/containers within the docker-compose yaml file
+	docker compose create     ##  Creates containers for a service.
+	docker compose start      ## Start services
+	docker compose down       ## Stop and remove the services/containers running on the docker host.
+	docker compose stop       ## Stop services
+	docker compose rm         ## Removes stopped service containers
+	docker compose pause      ##   Pause services
+	docker compose unpause    ##   UnPause services
+	docker compose  kill      ##  Force stop service containers.
+	docker compose  logs      ##   View output from containers
+	docker compose  ls        ##  List running compose projects
+	docker compose  cp        ##  Copy files/folders between a service container and the local filesystem
+
+ ## Create and Start a number of container services
+	docker compose	up -d  --scale  <service_name>=<no_of_containers
+		docker compose up -d --scale database=5
+
+  ## Create a network on docker-compose
+  networks:
+	coffee:
+		ipam:
+			driver: default
+			config:
+				- subnet: "192.168.92.0/24"
+	hacked:
+		ipam:
+			driver: default
+			config:
+				- subnet: "192.168.45.0/24"
+				
+	asqard:
+		ipam:
+			driver: default
+			config:
+				- subnet: "10.89.1.0/24"
+	
+
+  ## Assigning a network to a service container
+  
+	goodtea:
+		image: vulhub/solr:8.11.0
+		ports:
+			- "3000:3000"
+			- "20022:22"
+		networks:
+			hacked:
+				ipv4_address: 192.168.45.89
+	
+
+
+****************************************************************************
+		LINK or MAP one port says 80 to another port says 9000 on the same host
+	
+	Windows (using netsh):
+	Temp:
+	netsh interface portproxy add v4tov4 listenport=80 listenaddress=127.0.0.1 connectport=9000 connectaddress=127.0.0.1
+
+
+	Perm:
+	1.On Windows, you can use the netsh command to persistently map ports. 
+	Open Command Prompt as Administrator and run:
+		netsh interface portproxy add v4tov4 listenport=80 listenaddress=127.0.0.1 connectport=9000 connectaddress=127.0.0.1
+
+	2.To remove the portproxy rule, you can use:
+		netsh interface portproxy delete v4tov4 listenport=80 listenaddress=127.0.0.1
+	
+	Remember that these instructions are specific to the command prompt. 
+	Adjust the parameters if needed based on your specific use case or requirements.
+	
+	#########################################################################
+	
+	Linux (using iptables):
+	Temp:
+	sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 9000
+	
+	
+    Perm:
+	1.Create a new file for your iptables rules. For example:
+		sudo nano /etc/iptables.rules
+	
+	2.Add the following rule to forward traffic from port 80 to port 9000:
+		*nat
+		:PREROUTING ACCEPT [0:0]
+		-A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 9000
+		COMMIT
+	3.Save and close the file.
+
+	4.Load the rules during the system startup:
+		sudo iptables-restore < /etc/iptables.rules
+	
+	5.Additionally, save the rules to be loaded during startup:
+		sudo sh -c 'iptables-save > /etc/iptables.up.rules'
+	
+	6.Edit the network interfaces file to load the rules during startup:
+		sudo nano /etc/network/interfaces
+
+	7.Add the following line at the end:
+		pre-up iptables-restore < /etc/iptables.up.rules
+	Save and close the file.
+	
+	Now, the port forwarding rule should persist across reboots.
+	
+	
+	For Ubuntu 18.04 and later:
+	Starting from Ubuntu 18.04, the recommended way to persist iptables rules is to 
+	use iptables-persistent. Install it with:
+	
+	
+	During the installation, you'll be prompted to save current IPv4 and IPv6 rules. 
+	Choose "Yes" for both.
+
+	The rules are then saved in the /etc/iptables/rules.v4 file for IPv4.
+	#########################################################################
+
+ **********************************************************************************8
+ 
+			####### CHECKING ALL OPEN PORTS ON A SYSTEM
+ 
+	ss -tulpn            ## List all Open ports
+	
+	firewall-cmd  --list-all      ## List all Open ports
+	
+	
+			####### OPENGING A PORT ON A SYSTEM
+	
+	sudo firewall-cmd  --zone=public   --permanent  --add-port=<port_number>/tcp  
+	
+	sudo firewall-cmd  --reload     ## Reload the firewall service
+	
+	
+			####### REMOVING AN OPENGING PORT ON A SYSTEM
+	
+	sudo firewall-cmd  --zone=public  --permanent   --remove-port=<port_number>/tcp  
+		
+	sudo firewall-cmd  --reload     ## Reload the firewall service
+		 
+		 
+			####### CHECKINT DEAMON OF THE FIREWALL ON A SYSTEM
+			
+	sudo systemctl status firewalld     ## Check firewall service status
+
+
+
+***********************************************************************************
+
+413 Error usually occurs when you upload a large file to your web server and your hosting provider has set a limitation on file size.
+
+ Edith or including the below config on the container ends.
+
+      /etc/nginx/conf.d/default.conf
+
+
+    server {
+        client_max_body_size 20M; # Adjust this value to fit your needs
+    }
+
+OR
+
+	http {
+		...
+		server {
+			...
+			client_max_body_size 20M; # Adjust this value to fit your needs
+			...
+		}
+	}
+
+
+And also 
+
+Even after adding client_max_body_size 20M; in nginx.conf file, I get the same error in my Laravel app.
+Later I found the limit referred to in the php.ini. Go to /etc/php/<your-php-version>/fpm 
+and edit the following lines in the php.ini file on that particular container
+
+
+upload_max_filesize = 20M
+post_max_size = 20M
+
+increase the limit size as per your app need.Dont forget to Restart PHP-FPM by 
+
+sudo service php8.2-fpm restart
+
+
+*******************************************************
+
+
+
+
+  

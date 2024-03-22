@@ -1,0 +1,71 @@
+
+pipeline {
+	agent any
+	
+	environment {
+    PATH = "/var/jenkins_home/.nvm/versions/node/v20.9.0/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${env.PATH}"
+    }
+
+	stages{
+		stage('1 -: Clone Repo app - git'){
+			steps{
+				git branch: 'pre_prod', credentialsId: 'cc911af9-d8f2-42c8-9916-b7446fbdfec0', url: 'http://bitbucket.gh.internal.vodafone.com/scm/vgil/vgilmonitor-frontend.git'
+			}
+		}
+		
+		stage('2 -: Build Code'){
+			steps{
+                sh 'echo “Running Installation”'
+                sh 'npm install'
+                sh 'echo “Running build”'
+                sh 'npm run build'
+			}
+		}
+
+		stage('3 -: Deploy Build Artifact'){
+			options {
+				timeout(time: 60, unit: 'MINUTES')   // timeout on this stage
+          		}
+			steps{
+				sh 'echo “Initializing Deployment”'
+				sh 'echo “Verifying Current Working Directory”'
+				sh 'pwd'
+				sh 'echo “Listing files in directory”'
+				sh "ls -lhsa"
+				sh 'echo “Syncing files to remote server”'
+				sh 'rsync -auvzP -e  "ssh -o PubkeyAcceptedKeyTypes=rsa-sha2-256" --omit-dir-times --no-perms --no-owner --no-group $(pwd)/ devuser@10.233.217.57:/opt/apps/VgilMonitorProtalFrontendUAT'
+				//sh 'scp  $(pwd)/*  devuser@10.233.209.66:/srv/www/chatbot-ui-pipeline-test'
+			}
+		}
+
+		stage('4 -: Docker Image Building'){
+			steps{
+				sh 'echo "Creating Docker Images via Dockerfile"'
+				
+			}
+		}
+
+
+		stage('5 -: '){
+			steps{
+			
+			}
+		}
+
+	}
+}
+
+
+	    stage('6 -: Sending File'){
+            steps{
+                sh '''
+                  echo "SSH into ChatBox"
+                  ssh devuser@10.233.209.66
+                 // echo “Initializing Deployment”
+            
+                '''
+            }
+	    }
+		
+
+

@@ -1,0 +1,32 @@
+
+Creating Script for the below Error on Docker\
+
+## permission denied while trying to connect to the Docker daemon socket 
+   at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json": 
+   dial unix /var/run/docker.sock: connect: permission denied   ##
+
+if(cat /etc/group | grep docker != docker) {
+	+ sudo groupadd docker   # Create the docker group
+ } 
+else 
+	echo "docker group already avaliable"
+
+
++  sudo usermod -aG docker ${USER}  # Add your user to the docker group
+
++  sudo chown ${USER}  /var/run/docker.sock
+
+
+***********************************************************
++* sudo chmod 666 /var/run/docker.sock    # Main Solution to the Error. And open to the wolrd
++* sudo chmod 660 /var/run/docker.sock    # User should be in the docker group.
+*********************************************************
++ su -s ${USER}  or  su - ${USER}   # Switch to User
+
+***********************************************************
++ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+
++ sudo chmod g+rwx "$HOME/.docker" -R
+***********************************************************
++ ls -lrth /var/run/docker.sock
+************************************************************
