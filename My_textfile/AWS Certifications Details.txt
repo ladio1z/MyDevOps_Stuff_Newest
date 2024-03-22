@@ -1,0 +1,135 @@
+=============================================================================================
+AWS Certifications laydown
+=============================================================================================
+
+-------------------------------------
+AWS Certified Cloud Practitioner:  
++++++++++++++++++++++++++++++++++++
+ 
+Understand AWS cloud concepts, services, and architectural best practices.
+
+Identify AWS services and their use cases.
+
+Describe the AWS shared responsibility model.
+
+Define basic security and compliance aspects of the AWS platform.
+
+
+------------------------------------------------
+AWS Certified Solutions Architect – Associate:
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+Design resilient and scalable architectures using AWS services.
+
+Select appropriate AWS services for various use cases.
+
+Understand AWS deployment and management services.
+
+Create secure applications and infrastructures in AWS.
+
+
+-----------------------------------------
+AWS Certified Developer – Associate:
++++++++++++++++++++++++++++++++++++++++
+
+Write, deploy, and debug cloud-based applications using AWS.
+
+Understand AWS SDKs, AWS CLI, and AWS CloudFormation templates.
+
+Implement security practices in AWS.
+
+Optimize the performance of AWS services.
+
+
+--------------------------------------------------
+AWS Certified SysOps Administrator – Associate:
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Manage and operate systems on AWS.
+
+Implement and control the flow of data to and from AWS.
+
+Choose the right AWS services for various operational tasks.
+
+Apply security best practices in AWS environments.
+
+
+--------------------------------------------------
+AWS Certified DevOps Engineer – Professional:
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Implement and manage continuous delivery systems and methodologies on AWS.
+
+Understand and automate security controls, governance processes, and compliance validation.
+
+Implement monitoring, logging, and performance tuning.
+
+Manage and provision infrastructure as code (IAC).
+
+
+------------------------------------------------------
+AWS Certified Solutions Architect – Professional:
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Design highly available, cost-efficient, fault-tolerant, and scalable systems on AWS.
+
+Select appropriate AWS services to meet specific requirements.
+
+Migrate complex, multi-tier applications to AWS.
+
+Implement and control data flow to and from AWS.
+
+
+--------------------------------------------
+AWS Certified Data Analytics – Specialty:
++++++++++++++++++++++++++++++++++++++++++++
+
+Design, build, secure, and maintain analytics solutions on AWS.
+
+Define AWS data analytics services and tools.
+
+Implement data analysis using various AWS services.
+
+Optimize and troubleshoot data analytics solutions on AWS.
+
+
+------------------------------------------------
+AWS Certified Machine Learning – Specialty:
+++++++++++++++++++++++++++++++++++++++++++++++
+
+Build, train, tune, and deploy machine learning models using AWS services.
+
+Choose the right machine learning services for specific tasks.
+
+Implement machine learning solutions for various use cases.
+
+Optimize and troubleshoot machine learning models on AWS.
+
+
+--------------------------------------
+AWS Certified Security – Specialty:
+++++++++++++++++++++++++++++++++++++++
+
+Design and implement secure applications and systems on AWS.
+
+Secure data, infrastructure, and compliance in AWS.
+
+Implement security controls and incident response.
+
+Monitor and audit AWS resources for security.
+
+
+--------------------------------------------------
+AWS Certified Advanced Networking – Specialty:
++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+Design, implement, and manage complex networking architectures on AWS.
+
+Optimize and troubleshoot AWS networking performance.
+
+Implement secure connectivity solutions.
+
+Leverage AWS services for hybrid and multi-cloud networking.
+
+
+================================================================================================

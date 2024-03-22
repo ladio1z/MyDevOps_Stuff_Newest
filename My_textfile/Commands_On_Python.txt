@@ -1,0 +1,151 @@
+***************************************************************
+print('This is system to convert distance from km to miles')
+name=input('Enter your name, please')
+dis_km=float(input('Enter the distance in Km to be converted to miles: '))
+dis_mile=dis_km/1.609
+
+print('Hello ' + name.capitalize() + ', Good Day to Thy!' )
+print('The distance of ' + str(dis_km) + 'km you entered is ' + str(dis_mile) + 'miles when converted.')
+print('Thank You.')
+   			or
+print(f'Hello {name.capitalize()}, Good Day to Thy!' ) 
+print(f'The distance of {dis_km}km you entered is {dis_mile}miles when converted.')
+print(f'Thank You.')
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+sales_w1 = [7,3,42,19,15,35,9]
+sales_w2 = [12,4,26,10,7,28]
+sales_w2.append(int(input('Add the sale of the last day of this week.')))
+print(sales_w2)
+sales = sales_w1 + sales_w2
+# sales.extend(sales_w1) 
+# sales.extend(sales_w2)
+print(sales)
+print(f'Best Day for the 1st Week is ${max(sales_w1)*1.5}. ')
+print(f'Worst Day for the 1st Week is ${min(sales_w1)*1.5}. ')
+
+print(f'Best Day for the 2nd Week is ${max(sales_w2)*1.5}. ')
+print(f'Worst Day for the 2nd Week is ${min(sales_w2)*1.5}. ')
+
+print(f'Best Day for both 2 Weeks is ${max(sales)*1.5}. ')
+print(f'Worst Day for both 2 Weeks is ${min(sales)*1.5}. ')
+
+        OR
+
+sales.sort()
+worst_day_prof = sales[0] * 1.5
+best_day_prof = sales[-1] * 1.5
+print(f'Worst day profit:$ {worst_day_prof}')
+print(f'Best day profit:$ {best_day_prof}')
+print(f'Combined profit:$ {worst_day_prof + best_day_prof}')
+
+
+    OR [NOT WORKING ]
+
+def pro_return(size):
+    index = 0
+    while index <= len(size):
+        profit = 1.5 * size[index]
+        print(index, profit)
+        index += 1
+    return profit
+    
+profit = pro_return(sales_w1)
+print(profit)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+csv = 'Eric,John,Michael,Terry,Graham:TerryG;Brian'
+friends_list = ['Exercise: fill me with names']
+# print(friends_list)
+# From the list above fill a list(friends_list) properly
+# with the names of all the friends. One per "slot"
+# you may need to run same command several times
+# use print() statements to work your way through the exercise
+csv1 = csv.split(',')
+csv2 = csv1[-1].split(':')
+csv3 = csv2[-1].split(';')
+friends_list = csv1[:-1] + csv2[:-1] + csv3
+# print(csv1[:-1] + csv2[:-1] + csv3) 
+print(friends_list)
+
+## OR 
+
+csv1 = (csv.replace(':',',')).split(',')
+friends_list = csv1[:-1] + csv1[-1].replace(';',',').split(',')
+# print(csv1[:-1])
+# print(csv1[-1].replace(';',',').split(','))
+print(friends_list)
+
+## OR
+
+csv = 'Eric,John,Michael,Terry,Graham:TerryG;Brian'
+print(','.join(csv.split(';')))
+print(','.join(csv.split(';')).split(':'))
+print(','.join(','.join(csv.split(';')).split(':')))
+print((','.join(','.join(csv.split(';')).split(':'))).split(','))
+friends_list = (','.join(','.join(csv.split(';')).split(':'))).split(',')
+print(friends_list) 
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#Sets - Exercise
+
+friends = {'John','Michael','Terry','Eric','Graham'}
+my_friends = {'Reg','Loretta','Colin','John','Graham'}
+cars =['900','420','V70','911','996','V90','911','911','S','328','900']
+
+#1. Check if ‘Eric’ and ‘John’ exist in friends
+print(friends.intersection({'Eric', 'John'}))
+print('Eric' in friends and 'John' in friends)
+
+#2. combine or add the two sets 
+print(friends.union(my_friends))
+OR
+print(friends | my_friends)
+
+#3. Find names that are in both sets
+print(friends.intersection(my_friends))
+OR
+print(friends & my_friends)
+
+#4. find names that are only in friends
+print(friends.difference(my_friends))
+OR
+print(friends - my_friends)
+
+#5. Show only the names who only appear in one of the lists
+print(friends.difference(my_friends).union(my_friends.difference(friends)))
+OR
+print(my_friends.symmetric_difference(friends))
+OR
+print(my_friends ^ friends)
+
+#6. Create a new cars-list without duplicates
+new_listcar = set(cars)
+print(new_listcar)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+def greeting(name, age=28, color="red"):
+    #Greets user with 'name' from 'input box' and 'age', if available, default age is used
+    # print('Hello '  +  name.capitalize() + ', you are ' + str(age) +'!')
+    print(f'Hello {name.capitalize()}, you are {age}!')
+    print(f'We hear you like the color {color.lower()}')
+    age = int(age) + 1
+    print(f"You will be {age} on your next birthday!!!")
+
+name = input('Enter your name: ')
+age = input('Enter your age: ')
+color = input('Enter your color you like: ')
+greeting(name, age , color)
+# 1. Add new print statement - on a new line
+#    which says 'We hear you like the color xxx! xxx is a string with color 
+# 2. extend the function with another  input parameter 'color', that defaults to 'red'
+# 3. Capture the color via an input box as variable:color 
+# 4. Change the 'You are xx!' text to say 'you will be xx+1 years old next birthday 
+#  adding 1 to the age
+# 5. Capitalize first letter of the 'name', and rest are small caps 
+# 6. Favorite color should be in lowercase 

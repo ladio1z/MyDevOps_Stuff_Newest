@@ -1,0 +1,17 @@
+@CSD, 
+
+Please advise the users to Reboot the device 7 times and try after 30 mins because each windows
+ logon is an attempt to generate this PRT token, then run the CMD command “dsregcmd /status”
+
+Reboot the device/computer 7 times and afterward wait for after 30 mins, then log in and try connecting to VPN
+
+If that didn't work, Ask the user once logged into the laptop to connect to the recovery mode profile 
+(connection to everything will be dropped since the Recovery VPN profile allows only a connection to AD and no other websites) 
+- then disconnect again. Log out using Ctrl+Alt+Del and then sign in again.
+
+If that didn't work then ask the user to go to the Windows logo - search for Credential manager -
+ Remove all credentials in there - Press on Ctrl+Alt+Del - Sign out from the laptop - Sign in again.
+
+If that didn't work then ask the user to log in to the laptop using full UPN (xxx@vodafone.com) and not (vf-root\shalabyk)
+
+if the users followed the process and facing the same issue so please refer it to (GOIT WP OPS Client Management GOIT-WP)

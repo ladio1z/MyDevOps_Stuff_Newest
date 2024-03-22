@@ -1,0 +1,39 @@
+.......................................................     
+             DEVOPS URLs Stuff & Information
+.......................................................
+Note on Vagrant:
+https://phoenixnap.com/kb/vagrant-beginner-tutorial#ftoc-heading-10
+
+================================================================================
+
+Template of Website
+https://www.tooplate.com/view/2129-crispy-kitchen
+=================================================================================
+
+Youtube or Online Sch Lessons
+
+On DevOps
+https://www.youtube.com/watch?v=8KZi7KBpk0I
+
+https://www.youtube.com/watch?v=efHas35j_yg
+
+https://www.youtube.com/watch?v=31igoWxauEQ
+
+https://www.simplilearn.com/learn-devops-basics-skillup?tag=devops
+
+https://www.simplilearn.com/devops-tools-free-course-skillup?tag=devops
+
+
+On Ethical Hacking
+https://www.simplilearn.com/learn-ethical-hacking-online-free-course-skillup?tag=linux
+
+
+On Linux
+https://www.simplilearn.com/free-linux-foundation-course-skillup?tag=linux
+
+Alison School Site
+https://alison.com/
+
+**********************************************************************
+
+
