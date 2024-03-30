@@ -1,0 +1,94 @@
+
+MPLS ==> Team to provide Internet access
+	
+	docker run -d  \
+	--name work_tomcat  \
+	--mount  type=volume, source= /home/ladio1z/tomcat_home,  target=/usr/local/tomcat    \
+	-p 8800:8080  tomcat
+	
+	
+	docker run -d  \
+	--name work_tomcat  \
+	-v /home/ladio1z/tomcat_home:/usr/local/tomcat  \
+	-p 8800:8080  tomcat
+	
+	docker run -d \
+	--name work_nginx  \
+	-v /home/lukeman/nginx_home:/usr/share/nginx/html  \
+	-p 8801:80 nginx
+
+
+	docker run -d \
+	--name work_nginx2  \
+	-v /opt/apps:/usr/share/nginx/html   \
+	-p 8802:80 nginx	
+
+
+	docker run -d \
+	--name home_nginx  \
+	-v /home/ladio1z/nginx_home:/usr/share/nginx/html   \
+	-p 8803:80 nginx
+	
+	
+	docker run -d  \
+	--name  nda \
+	-v  /opt/HR/NDA/nda_app:/usr/share/nginx/html:rw  \
+	-v  /opt/HR/NDA/phpbackend/default.conf:/etc/nginx/conf.d/default.conf:rw  \
+	-v  /opt/HR/NDA/phpbackend/new_www/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw \
+	-v  /opt/HR/NDA/supervisord.conf:/etc/supervisord.conf:rw  \
+	-v  /opt/HR/NDA/laravel-worker.conf:/etc/supervisor/conf.d/laravel-worker.conf:rw  \
+	-p 9030:9000  \
+	localhost/nginx/iam_api:2.3
+	
+	
+	
+	docker run -d  \
+	--name  portainer   \
+	-v  /var/run/docker.sock:/var/run/docker.sock  \
+	-v  portainer_data:/data   \
+	-p  8000:8000   \
+	-p  9443:9443   \
+	-p  9001:9001  \
+	--restart  always  \
+	localhost/portainer-ce:2.9.4
+	
+	
+	
+	## Checking port opening
+	ss -tulpn | grep LISTEN | grep :8801
+	
+	
+	IPS/IDS Sensors
+	Introcing Protection Service/Introcing Detector Service
+	
+		
+	On the GitBash  Config files are at:  /etc/gitconfig 
+	git config --global --edit
+	git commit --amend --reset-author
+	git config --global user.name "FIRST_NAME LAST_NAME"
+	git config --global user.email "MY_NAME@example.com"
+	git config --global http.sslCAInfo /c/Users/lukeman.adio/Downloads/CA_bundle.pem
+	git config --global credential.helper "cache --timeout=3600"   ## Save GitHub login details for longer
+	
+	
+$ find . -type d -empty -exec rmdir -v {} +
+
+The -type d option searches for directories, -empty select empty ones and -exec rmdir {} executes the rmdir command to delete them.
+The rmdir command ensures that the directory is empty before deleting it.
+Alternatively, you can also use this command to complete the same task:
+
+$ find . -type d -empty -delete
+
+
+glpat-7usL6XK4yrAxmvzEa6eZ
+
+git@gitlab.internal.vodafone.com:lukeman.adio/cicd_pipeline.git
+
+https://gitlab.internal.vodafone.com/lukeman.adio/cicd_pipeline.git
+
+GitHub 2 WSL Token: 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   ||   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   ||  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
+Jenkins 2 GitLab:   glpat-14-xLgSfWj1h9JPxqbMF
+
+adiolukeman@gmail.com  || CC@AWS2023computing  ||
+adiolukema@gmail.com || CC@AWS4KloudA2024 || KloudAcademy AWS Acc
+
