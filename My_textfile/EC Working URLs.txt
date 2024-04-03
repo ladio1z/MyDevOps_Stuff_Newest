@@ -1,0 +1,112 @@
+Working URLs/Sites
+---------------------------------------
+VodafoneCash Platform
+https://sp.vodafonecash.com.gh/payment/login.action
+==============================================================================
+
+CRM URL
+https://crm-prod-app2.gh.internal.vodafone.com/ecommunications_enu/
+https://crm-prod-app2.gh.internal.vodafone.com/ecommunications_enu/predeploy.htm
+==============================================================================
+
+https://vfghgb-promotions-vml1p.internal.vodafone.com/
+==============================================================================
+
+Vodafone App Support
+http://10.233.203.22/myvodafoneappsupport/index.php
+==============================================================================
+
+CHP Platform
+http://10.233.201.175/Reports/browse/
+==============================================================================
+
+WFO Link
+http://10.0.0.71/wfo/
+==============================================================================
+
+KNOWLEDGE HUB
+https://vodafone.sharepoint.com/sites/ghana_commercial/xc/SitePages/Home.aspx          
+==============================================================================
+
+SIMBRELLA Platform
+https://cp-simbrella.gh.internal.vodafone.com/                        
+==============================================================================
+
+RANCARD Platform
+https://sdp.rancardmobility.com/login 
+username: customerservice@vodafone.com
+password: CuNP$45FthM
+==============================================================================
+
+Avaya Agentdesktop
+http://vfghcnavayaaccha/agentdesktop
+http://10.0.0.61/agentdesktop
+==============================================================================
+
+CVAS Platform
+https://cvas.gh.internal.vodafone.com:8443/reports_v4/ : vfgh_cc_user Password: ./"LXjN?
+==============================================================================
+
+https://digimap.vodafone.com.gh/dms/inde2x.php
+==============================================================================
+
+VFCash Certificate Request Link
+https://vmtgh.ca.vodafone.com/certsrv/
+==============================================================================
+
+https://10.249.185.155:8143/cs/login.html 
+Pass_1234
+==============================================================================
+
+http://10.249.84.8/trusms/trusms?application=logoff&version=0.0.1&action=logoff 
+Pass_1234
+==============================================================================
+
+https://10.245.127.6:5443/om/login.srv?action_type=logout_operator
+==============================================================================
+
+Unik App
+http://unik/unik/home
+http://10.233.201.12/unik/viewsubscriber or http://10.233.201.12/unik/index
+==============================================================================
+
+Real Time Reporting Avaya
+https://vfghcnavayaaccha/Reporting/Realtime/ 
+https://10.0.0.61/Reporting/Realtime/
+https://10.0.0.61/CCMALogin/Home/Login
+==============================================================================
+
+https://vfghgb-promotions-vml1p.internal.vodafone.com/
+==============================================================================
+
+https://digimap.vodafone.com.gh/dms/inde2x.php
+==============================================================================
+
+LMT Set Link/URL
+http://10.245.188.102/
+=================================================================================
+
+VSAP - CRM USER MANAGER
+http://10.233.217.42:7070/login
+username: moses.edzidor
+pass:           
+==============================================================================
+
+TPS2-DIRECTORY MANAGER
+https://tps2.vodafone.com/Administration/
+Admin login
+============================================================================
+
+VIC SUPPORT INTERAL VODAFONE PLATFORM
+https://vicsupport.internal.vodafone.com/
+Admin Login
+=================================================================================
+
+FastViewer Client App
+LogIn: 522346
+
+==================================================================================
+
+Citrix App Link
+https://citrixdr.vodafone.com.gh/
+AD login and Authenticate requires.

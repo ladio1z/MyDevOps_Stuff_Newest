@@ -86,7 +86,7 @@ git@gitlab.internal.vodafone.com:lukeman.adio/cicd_pipeline.git
 
 https://gitlab.internal.vodafone.com/lukeman.adio/cicd_pipeline.git
 
-GitHub 2 WSL Token: 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  
+GitHub 2 WSL Token: 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  
 Jenkins 2 GitLab:   glpat-14-xLgSfWj1h9JPxqbMF
 
 adiolukeman@gmail.com  || CC@AWS2023computing  ||
