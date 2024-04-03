@@ -68,8 +68,11 @@ MPLS ==> Team to provide Internet access
 	git config --global user.name "FIRST_NAME LAST_NAME"
 	git config --global user.email "MY_NAME@example.com"
 	git config --global http.sslCAInfo /c/Users/lukeman.adio/Downloads/CA_bundle.pem
+	git config --global sslVerify true or false
 	git config --global credential.helper "cache --timeout=3600"   ## Save GitHub login details for longer
 	
+	--global ==> for global setting 
+	--local  ==> for local setting
 	
 $ find . -type d -empty -exec rmdir -v {} +
 
