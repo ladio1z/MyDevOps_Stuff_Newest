@@ -1,4 +1,4 @@
-
+GOOD
 https://www.geeksforgeeks.org/how-to-install-and-run-linux-software-in-windows-10-using-wsl2/
 
 How to install and Run Linux Software in Windows 10 usingWindows Sub System Linux WSL2?

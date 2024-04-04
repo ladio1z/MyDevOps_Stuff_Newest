@@ -85,12 +85,7 @@ $ find . -type d -empty -delete
 
 glpat-7usL6XK4yrAxmvzEa6eZ
 
-git@gitlab.internal.vodafone.com:lukeman.adio/cicd_pipeline.git
 
-https://gitlab.internal.vodafone.com/lukeman.adio/cicd_pipeline.git
-
-GitHub 2 WSL Token: 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  
-Jenkins 2 GitLab:   glpat-14-xLgSfWj1h9JPxqbMF
 
 adiolukeman@gmail.com  || CC@AWS2023computing  ||
 adiolukema@gmail.com || CC@AWS4KloudA2024 || KloudAcademy AWS Acc
