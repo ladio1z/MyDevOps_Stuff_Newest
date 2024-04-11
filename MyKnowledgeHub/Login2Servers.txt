@@ -1,0 +1,198 @@
+Password LOGINS
+
+
+Jenkins Project Details
+http://10.233.217.230:8081/
+
+dev2 / 123dev2  ==> Dev_Lead
+appsup2 / appsup2@24
+
+dev1 / 123dev1
+appsup1 / appsup1@24
+
+
+*********************************
+
+10.233.217.57  ||  vfghgb-vgil-vml1t
+devuser
+Ps8ss&s9Es&w
+
+
+10.233.217.66  ||  vfghgb-iam-vml1p
+PD Test
+devuser
+Psdf*sefr^w
+
+
+10.233.217.76
+devuser
+dashboard / PaSsW0rd123
+admin / m_;bm9@?h88qS$n
+
+
+10.233.217.90
+devuser
+
+
+10.233.217.95  ||  vfghgb-corpweb-vml1t
+devuser
+
+
+
+10.233.217.97  ||  vfghgb-voda-reach-vml1t
+devuser
+OpsdPs8&sHs24^7
+
+
+
+10.233.217.108  ||  vfghgb-nda-vml1t
+devuser
+Welcome@1234
+
+
+10.233.217.228  ||  vfghgb-dp-vml1t
+devuser
+_Psupport@130&
+
+
+10.233.217.230  ||  vfghgb-operationsjh-vml1p
+Junk_BOX
+lukeman.adio
+
+
+*********************************
+
+
+10.233.201.99
+devuser
+
+
+10.233.201.111
+   || Dev Coast_API
+devuser
+Welcome@1234
+
+
+10.233.201.118  ||  vfghgb-mvweb-vml1p
+devuser
+_P)8d$*5*&Sd
+
+
+10.233.201.207
+lukeman.adio
+Welcome@12345
+
+
+10.233.201.228  ||  vfghgb-dp-vml1p
+BPA applications
+devuser
+Welcome@1234
+
+
+
+*********************************
+
+10.233.202.102                                                            
+devuser
+
+
+
+*********************************
+
+10.233.203.36  ||  vfghgb-pd-portal-vml1p
+PD - LoadBalancer
+devuser
+Pdsh76wersdf763
+
+
+10.233.203.37  ||  vfghgb-pd-portal-vml2p
+PD DB1
+devuser
+Pdsh76wersdf763
+
+
+10.233.203.38   ||  vfghgb-mcasbroker-vml1p.internal.vodafone.com                                                 
+devuser
+Psdf*sefr^w
+
+
+10.233.203.161  ||  vfghgb-iam-vml1p
+devuser  
+c#l0K@m3L_67
+
+
+*********************************
+
+10.233.208.56
+devuser
+
+
+*********************************
+
+10.233.209.66
+devuser
+
+
+10.233.209.138
+devuser
+Welcome@1234
+
+
+10.233.209.139
+devuser
+Welcome@1234
+
+
+10.233.209.167  ||  vfghgb-trade-app-vml1p
+devuser
+c#l0K@m3L_67
+
+
+10.233.209.194  ||  vfghgb-hr-portal-vml1p
+PD APP1  ||  Dev Coast_API
+devuser
+c#l0K@m3L_67
+
+
+*********************************
+
+
+
+
+
+*********************************
+
+
+10.233.234.62  ||  vfghcn-corpweb-l1p
+DR server
+devuser
+Psdf&sdf*&s
+
+
+10.233.234.63  ||  vfghcn-mvweb-vml1p
+DR server
+devuser
+Psdf&sdf*&s
+
+
+
+*********************************
+
+
+10.233.237.95  ||  vfghcn-pd-dr-vml1p
+PD App2
+devuser
+c#l0K@m3L_67
+
+
+
+*********************************
+
+
+ 
+ 
+
+
+
+
+

@@ -626,6 +626,14 @@ The syntax of this is as follows.
 	-maxdepth 1 – this means it will not go into sub folders of the working directory
 	-exec rm {} \; – this deletes any files that match the previous settings.
  
+ 
+*******************************************************
+
+ How to add a server ssh public key to Jenkins Known-list
+ 
+		ssh-copy-id username@server_ip
+		
+ 
 *******************************************************
 
 
