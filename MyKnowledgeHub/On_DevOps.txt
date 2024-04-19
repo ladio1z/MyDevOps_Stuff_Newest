@@ -562,38 +562,50 @@ Compress a file using xz
 
  Edith or including the below config on the container ends.
 
-      /etc/nginx/conf.d/default.conf
-
+      /etc/nginx/conf.d/default.conf   OR  
 
     server {
         client_max_body_size 20M; # Adjust this value to fit your needs
     }
 
-OR
+
+	/etc/nginx/nginx.conf   http {  }   OR   /etc/nginx/sites-available/default
+
 
 	http {
-		...
-		server {
-			...
-			client_max_body_size 20M; # Adjust this value to fit your needs
-			...
+		
+		 client_max_body_size 20M; # Adjust this value to fit your needs
+		
+		 #  server_tokens off; 		
 		}
 	}
 
 
+	location /uploads {
+		
+			client_max_body_size 20M; # Adjust this value to fit your needs
+	
+	}
+
 And also 
 
 Even after adding client_max_body_size 20M; in nginx.conf file, I get the same error in my Laravel app.
-Later I found the limit referred to in the php.ini. Go to /etc/php/<your-php-version>/fpm 
+Later I found the limit referred to in the php.ini. Go to /etc/php/<your-php-version>/fpm/php.ini 
 and edit the following lines in the php.ini file on that particular container
 
 
 upload_max_filesize = 20M
 post_max_size = 20M
 
-increase the limit size as per your app need.Dont forget to Restart PHP-FPM by 
+increase the limit size as per your app need.Dont forget to Restart services 
+	PHP-FPM / nginx by 
 
+
+service --status-all
 sudo service php8.2-fpm restart
+sudo service php8.2-fpm status
+sudo service nginx restart
+sudo service nginx status
 
 
 *******************************************************

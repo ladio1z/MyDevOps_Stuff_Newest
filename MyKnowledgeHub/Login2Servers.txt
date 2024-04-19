@@ -36,7 +36,7 @@ devuser
 
 10.233.217.95  ||  vfghgb-corpweb-vml1t
 devuser
-
+_Pshsd&sh67*s
 
 
 10.233.217.97  ||  vfghgb-voda-reach-vml1t
@@ -67,7 +67,7 @@ lukeman.adio
 devuser
 
 
-10.233.201.111
+10.233.201.111  ||  vfghgb-nda-portal-vml1p
    || Dev Coast_API
 devuser
 Welcome@1234
@@ -130,6 +130,16 @@ devuser
 *********************************
 
 10.233.209.66
+devuser
+OpsdPs8&sHs24^7
+
+
+10.233.209.58
+devuser
+OpsdPs8&sHs24^7
+
+
+10.233.209.59
 devuser
 
 
