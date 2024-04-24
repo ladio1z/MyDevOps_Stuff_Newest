@@ -24,11 +24,17 @@ devuser
 Psdf*sefr^w
 
 
-10.233.217.76
+10.233.217.76  ||  vfghgb-simreg-dashboard-vml1t
 devuser
 dashboard / PaSsW0rd123
 admin / m_;bm9@?h88qS$n
 
+
+
+10.233.217.80  ||   tcghgb-sslapp-vml1t
+SSL_PROJECT TEST
+devuser
+)to@L3ge_20$4
 
 10.233.217.90
 devuser
@@ -141,7 +147,7 @@ OpsdPs8&sHs24^7
 
 10.233.209.59
 devuser
-
+OpsdPs8&sHs24^7
 
 10.233.209.138
 devuser
@@ -161,12 +167,11 @@ c#l0K@m3L_67
 10.233.209.194  ||  vfghgb-hr-portal-vml1p
 PD APP1  ||  Dev Coast_API
 devuser
+_Psdf7e*&shg1*
 c#l0K@m3L_67
 
 
 *********************************
-
-
 
 
 
