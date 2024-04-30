@@ -1,0 +1,238 @@
+
+
+Voter Registration :- May 7 to May 27, 2024.
+
+Exhibition of Registered Voter :- July 15 to 24, 2024.
+
+Presidental & Parlimentaary Voting :- 7th Dec, 2024.
+
+
+ITEC of Work
+Interest in the Work
+Time to Work
+Energy into the Work
+Commitment to the Work
+
+
+*********************************************************************************************************
+
+
+I am now currently covering CICD.... Learn on tools like GitHub, Maven, SonarQube, Nexus, Jenkins, Docker and now on Kubernetes.......
+
+I wanted to humbly request if you have any assignments or tasks that I can do to keep my head and hand engaged as a search for a role as Build and Release Engineer or DevOps Engineer.....
+
+I want to understudy under thy as you are within the field of Devops environ.
+
+
+Many Thanks Senior.....
+
+1st -   Cloud Environment 'Solution Artitect' && Cloud Practitioner in both [ Azure && AWS ]
+2nd -  How Infrastructure works!! [ Databases, Networks, Security Policy, Servers, Virtualization, Automation of Infrastructures, DNS,  ] networking with other Kelvin
+3rd -  100% on Linux (Ubuntu - basic on linux) -: Bash Scripting
+
+Studying URLs
+1. DevOps Engineer Azure Learning Path for Beginner; can even deploy resources for free here
+https://learn.microsoft.com/en-us/training/browse/?roles=devops-engineer&products=azure&levels=beginner&resource_type=learning%20path
+
+2. Find out that for AWS
+https://explore.skillbuilder.aws/learn/mycourses
+
+https://explore.skillbuilder.aws/learn/public/learning_plan/view/82/cloud-foundations-learning-plan?la=cta&cta=topbanner
+
+
+3. Linux; make sure to finish this Course.
+https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux
+
+wc ==>  word count
+tac ==>  cat backwards
+locate ==>  
+find  ==>  find  .  -name  "filename"
+ 
+ps  lf  ==> ps [ process status ]
+ps  -u
+ps  -ef  ==>  processes of system in full detail
+ps  -eLf  |  less 
+ps  -elf  |  less
+ps   aux  ==> displays all processess of all users
+ps    axo  stat,priority,pid,pcpu,comm  |  head  -10  ==> specify which attribute ones view
+pstree  ==> view process in tree-like form
+
+
+env  or  export  or  set  |  head  ==> Display all enviroment variables
+
+
+renice  +3 <PID>   ==> change the process ID to +3 (niceness / nice value)
+[ to set higher priority, user need to used  sudo access ]
+
+gnome-system-monitor  ==> Launch the gnome system
+ksysguard   ===>  Launch the gnome system
+
+
+w, top or uptime  ===>  load averages
+
+fg ==> run a background process in the foreground (fg)
+bg ==> run a suspended process in the background (bg)
+jobs  / jobs -l  ==> list background process(ess)
+
+
+ * * * * *   /usr/local/bin/execute/this/script.sh
+30 08 10 06 *   /home/sysadmin/full-backup
+
+
+diff  [options]   <filename1>   <filename2>
+diff3   MY-FILE    COMMON-FILE   YOUR-FILE  ==>  comparing my-file to your-file using common-file as reference.
+
+dd if=/tmp/group of=/tmp/GROUP conv=ucase   ===> conversing to uppercase of a file group to a named file GROUP
+
+https://www.openvim.com/sandbox.html
+
+https://wiki.archlinux.org/title/rsync#As_a_backup_utility
+-------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
+
+
+*********************************************************************************************************
+
+
+TASK to Do [ Before 30th Nov ]
+Control Management for user access on Jenkins Server  
+
+We should have a naming convention for the Pipeline -: to know which team or persons in a team using/accessing the pipeline for
+Either by 1stname_convention
+first.* ==> match to job with name matching this pattern
+
+Or placing Teams Project in a dedicated folder/dir
+
+[ Create User ]
+[ Manage Roles ==> Global roles, Items roles  |  Assign Roles  ==> Global roles, Item roles
+
+-: Role-based Authorization Strategy
+[ Configure Global Security ==> Authorization ==> Role-Based Security{selected} ]
+
+[ Manager Jenkins ==> Manager User ==> Create users ]
+
+[ Manager Jenkins ==> Manager and Assign Roles ==> Manage Roles  ]
+       Global roles (can create role and assign them functionality -: admin & users)
+       Item roles (  sub-roles to access a particular projects/jobs, also Permission Template can be use)  
+       Pattern  [ Dev.* or  .*  or App.*   or  *.pipeline   or  .*Hr.*   ] Specify the folders or Jobs the Role is map to  
+Manage Roles enable one to create roles in the Global, Items and Agent level.
+
+
+[ Manager Jenkins ==> Manager and Assign Roles ==> Assign Roles
+       Global Roles (users/group assign to either admin or user Global role)
+       Item roles ( users/groups assigne to Item roles)
+Assign Roles; after these roles are created users/groups are being assigned to them.
+
+
+Matrix-Based Security
+b. [ Configure Global Security ==> Authorization ==> Matrix-Based Security{selected} ]
+
+
+Artifactory to keep previous -: Nexus
+Static Analystic Tools  -: Sonarqude
+Weekly Training
+Grafana
+
+
+
+
+*********************************************************************************************************
+
+
+
+Things 2 LERAN  
+
+*********************************************
+Automating scritpting 
+Ansible
+Bash Scripting = [ Bash, Python ]
+CICD pipeline
+*********************************************
+Learn more on Cloud Security and threat Management  ===> eProcess
+
+
+
+*********************************************************************************************************
+
+Error Nos and Its meaning
+200 ==> Successful
+400 ==> bad input
+401  ==> unauthorized
+403  ==> forbiden
+201  ==> Created
+
+·200 successful. User found·400 bad input·401 unauthorized ·403 forbidden ·201 Created
+
++++++++++++++++++++++
+403 ==> Forbidden/not authorized
+404 ==> not found
+500 ==> Internal Server Error
+503 ==> Service Unavailable
+504 ==> Gateway Timeout
+
+
+
+*********************************************************************************************************
+
+
+As technology is advancing and the need to adapt to it and grow with it; the need  is it for me to add to the current knowledge from school this skill and knowledge.
+And through the course content, I believe sitting for this course (System Administration and IT Infrastructure Services) will be a plus to me as it contain the necessary contents for my growth.
+And coming from a low-financing background, I haven't let this state limit me in my pursue for an advancement of my life. I push through to completing my Junior High and Senior High education via the help of others and scholarships. Progressing through the University degree through the help of my Mother (being a single-parent) and support of others, I was able to complete successfully.
+This advancement of life has been what keep me going, never letting any thing especially financial limitation to prevent me from upgrading or advancing or accomplishing a set goal/aim.
+Seeing the System Administration and IT Infrastructure Services Course and its content, I know learning and having this skill and knowledge will go a long way to advance in my future career. Therefore, I humbly request financial support to enable me do learn this course. 
+Thank You.
+
+
+*************************************************************************
+
+As I newly employee in my current field, this System Administration and IT Infrastructure Services course will open me up to learn new concepts from industry experts at Goggle which will hence my understanding on the  operation and structures of System Infrastructure.
+Also this course System Administration and IT Infrastructure Services will enable me gain a foundational understanding of this subject or tool used within this course. This is will be a platform that will lead me to greater understanding in the area of IT Infrastructure. This course module will enhance my troubleshooting skill, user and hardware provisioning  and able to manage potential issues.
+Learning about server operating systems, virtualization and network services are keen areas in my current field as an IT Monitoring and Application support analyst. Looking through this course modules, I have see these areas and more, and this will be a plus to the knowledge needed.
+Completing this course, the System Administration and IT Infrastructure Services will develop job-relevant skills with hands-on projects for me and to add up show forth this knowledge and skills after earning a shareable career certificate from Google.
+Thank You.
+
+##################################################
+
+I am a Lukeman in Ghana and also young in the field of IT, now growing towards the Cloud environment, that is into DevOps and also adding up into the area of Cybersecurity.
+I believe this Course will enhance my knowledge in the area of IT Infrastructure and also again some additional skills along the way.
+I look forward by God's Helping Hand, to provide my service beyond Ghana unto the other parts of the World.
+I ready to connect with others similar like-minded persons, so we achieve our goals together.
+Stay Safe and Blessed.
+
+***************************************************
+
+In an event of a broken computer or mobile phone, data on it would be saved if it was backup off-site (remotely).
+Thrice a time within the week do I backup my data on a Cloud Storage account; as backing it there will guarantee in retrieving  it as compare to backing it on the same device.
+I believe my data backed up on the Cloud end is securely stored because the backup process is encrypted before it is store at the Cloud end; hence even in accessing my data you couldn't be able to decrypt it.
+
+***************************************************************
+
+CI/CD vs DevOps
+CI/CD is an essential part of DevOps methodology, which aims to foster collaboration between development and operations teams. Both CI/CD and DevOps focus on automating processes of code integration, thereby speeding up the processes by which an idea (like a new feature, a request for enhancement, or a bug fix) goes from development to deployment in a production environment where it can provide value to the user.
+
+MTTR (mean time to repair) is the average time it takes to repair a system (usually technical or mechanical). It includes both the repair time and any testing time. The clock doesn't stop on this metric until the system is fully functional again.
+
+
+CICD -: Explanation of CICD
+The "CI" in CI/CD always refers to continuous integration, an automation process that facilitates more frequent merging of code changes back to a shared branch. As these updates are made, automated code building, testing and integration steps are triggered to ensure the reliability of merged code changes. 
+
+Continuous delivery automates the release of validated code to a repository/test environment following the automation of builds and unit and integration testing in CI.
+
+The final stage of a mature CI/CD pipeline is continuous deployment. Continuous deployment is an extension of continuous delivery and can refer to automating the release of a software’s changes from the repository/test environment to production, where it is usable by customers.
+
+
+
+
+
+
+
+
+*********************************************************************************************************
+
+
+
+
+
+
+*********************************************************************************************************

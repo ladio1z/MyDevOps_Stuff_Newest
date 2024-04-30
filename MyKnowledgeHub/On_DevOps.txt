@@ -648,6 +648,15 @@ The syntax of this is as follows.
  
 *******************************************************
 
+server certificate verification failed. CAfile: none CRLfile: none
+sudo apt-get install --reinstall ca-certifcates
+sudo apt-get install  apt-transport-https  ca-certificates  -y
+sudo update-ca-certificates
+get config --global http.sslverify "false"
+=============================
+		
+		
+*******************************************************
 
 
   
